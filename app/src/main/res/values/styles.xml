@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- 星评 -->
+    <style name="MyRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/my_ratingbar</item>
+        <!--<item name="android:minHeight">@dimen/mm_25</item>-->
+        <!--<item name="android:maxHeight">@dimen/mm_25</item>-->
+    </style>
+</resources>

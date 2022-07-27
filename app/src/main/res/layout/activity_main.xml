@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/C_FFFFFF"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/seachLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mm_80"
+        android:layout_marginTop="@dimen/mm_20"
+        android:layout_marginBottom="@dimen/mm_20"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/mm_30"
+            android:layout_marginEnd="@dimen/mm_30"
+            android:layout_weight="1"
+            android:background="@drawable/bg_round_50_fffff"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/mm_30"
+                android:layout_height="@dimen/mm_30"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/mm_40"
+                android:layout_marginLeft="@dimen/mm_20"
+                android:layout_marginEnd="@dimen/mm_20"
+                android:layout_marginRight="@dimen/mm_20"
+                android:src="@drawable/ic_search" />
+
+            <com.tom.commonframework.widget.CustomEdittext
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/mm_20"
+                android:layout_marginRight="@dimen/mm_20"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center|start"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/C_626262"
+                android:textColorHint="@color/C_626262"
+                android:textSize="@dimen/mm_24" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/mm_20f"
+            android:layout_marginLeft="@dimen/mm_20f"
+            android:gravity="center"
+            android:paddingEnd="@dimen/mm_30"
+            android:paddingRight="@dimen/mm_30"
+            android:text="搜索"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:textColor="@color/C_333333"
+            android:textSize="@dimen/mm_30" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mm_2"
+        android:layout_below="@+id/seachLayout"
+        android:background="@color/C_EBEBEB" />
+
+
+    <com.tom.commonframework.widget.BetterGesturesRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lineTop"
+        android:background="@color/C_FFFFFF"
+        android:overScrollMode="never" />
+
+    <com.tom.commonframework.widget.BetterGesturesRecyclerView
+        android:id="@+id/searchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lineTop"
+        android:visibility="gone"
+        android:background="@color/C_FFFFFF"
+        android:overScrollMode="never" />
+
+
+</RelativeLayout>

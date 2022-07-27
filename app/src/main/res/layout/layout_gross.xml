@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/C_FFFFFF"
+    android:overScrollMode="never">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mm_20"
+        android:layout_marginTop="@dimen/mm_20"
+        android:layout_marginEnd="@dimen/mm_20"
+        android:text="Recommend"
+        android:textColor="@color/C_333333"
+        android:textSize="@dimen/mm_40" />
+
+
+    <com.tom.commonframework.widget.BetterGesturesRecyclerView
+        android:id="@+id/grossRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="@dimen/mm_20"
+        android:background="@color/C_FFFFFF"
+        android:overScrollMode="never" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mm_2"
+        android:layout_below="@+id/grossRecyclerView"
+        android:layout_marginTop="@dimen/mm_20"
+        android:background="@color/C_EBEBEB" />
+
+
+</RelativeLayout>

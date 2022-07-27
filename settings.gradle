@@ -1,0 +1,3 @@
+rootProject.name = "Test project"
+include ':app'
+include ':commonframework'

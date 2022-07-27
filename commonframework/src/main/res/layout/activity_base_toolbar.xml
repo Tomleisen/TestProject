@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="toolbar"
+            type="com.tom.commonframework.common.base.ToolBarModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="84mm"
+        android:background="@{toolbar.background}"
+        android:clipToPadding="true">
+        <!--android:background="@color/C_FFFFFF">-->
+
+        <RelativeLayout
+            android:id="@+id/rl_left_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/rl_center_tool_bar"
+            android:visibility="@{toolbar.leftToolBarVisible ? View.VISIBLE : View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/rl_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="30mm"
+                android:paddingRight="100mm">
+
+                <ImageView
+                    android:id="@+id/iv_left"
+                    android:layout_width="17mm"
+                    android:layout_height="33mm"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:src="@{toolbar.leftImageRes}"
+                    android:visibility="@{TextUtils.isEmpty(toolbar.leftText) ? View.VISIBLE : View.GONE}"
+                    tools:src="@drawable/ic_back" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tb_left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="30mm"
+                android:text="@{toolbar.leftText}"
+                android:textColor="#333333"
+                android:textSize="35mm"
+                tools:text="23131" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_center_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10mm"
+            android:layout_marginRight="10mm"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@{toolbar.centerImageRes}" />
+
+            <TextView
+                android:id="@+id/tb_center_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:text="@{toolbar.centerText}"
+                android:textColor="@{toolbar.centerTextColor}"
+                android:textSize="35mm"
+                android:textStyle="bold"
+                tools:text="标题"
+                tools:textColor="#333333" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_right_tool_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/rl_center_tool_bar"
+            android:visibility="@{toolbar.rightToolBarVisible ? View.VISIBLE : View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/rl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="100mm"
+                android:paddingRight="30mm">
+
+                <ImageView
+                    android:id="@+id/iv_right"
+                    android:layout_width="45mm"
+                    android:layout_height="45mm"
+                    android:layout_centerVertical="true"
+                    android:src="@{toolbar.rightImageRes}"
+                    android:visibility="@{TextUtils.isEmpty(toolbar.rightText) ? View.VISIBLE : View.GONE}" />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tb_right_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="30mm"
+                android:paddingRight="30mm"
+                android:text="@{toolbar.rightText}"
+                android:textColor="@{toolbar.centerTextColor}"
+                android:textSize="30mm"
+                tools:text="发布环境" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/toolbar_view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1mm"
+            android:layout_alignParentBottom="true"
+            android:background="#f5f5f5"
+            android:visibility="@{toolbar.bottomLineVisible ? View.VISIBLE : View.GONE}" />
+
+    </RelativeLayout>
+</layout>
