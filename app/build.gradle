@@ -15,8 +15,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         //Room 数据库必须添加的,不添加则会报错：Schema export directory is not provided to the annotation processor so we cannot export the schema.
-        //https://blog.csdn.net/chuyouyinghe/article/details/123258810
-        //https://blog.csdn.net/unreliable_narrator/article/details/124959125
         javaCompileOptions {
             annotationProcessorOptions {
                 //配置并启把据库架构导出json文件到指定目录
